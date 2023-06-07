@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		55A5067A2A31108600E609BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A506792A31108500E609BA /* AppDelegate.swift */; };
 		55A5067C2A31108600E609BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5067B2A31108600E609BA /* SceneDelegate.swift */; };
-		55A5067E2A31108600E609BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5067D2A31108600E609BA /* ViewController.swift */; };
-		55A506812A31108600E609BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A5067F2A31108600E609BA /* Main.storyboard */; };
 		55A506842A31108600E609BA /* GoodForMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55A506822A31108600E609BA /* GoodForMe.xcdatamodeld */; };
 		55A506862A31108700E609BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A506852A31108700E609BA /* Assets.xcassets */; };
 		55A506892A31108700E609BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A506872A31108700E609BA /* LaunchScreen.storyboard */; };
 		55A506942A31108800E609BA /* GoodForMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A506932A31108800E609BA /* GoodForMeTests.swift */; };
 		55A5069E2A31108800E609BA /* GoodForMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5069D2A31108800E609BA /* GoodForMeUITests.swift */; };
 		55A506A02A31108800E609BA /* GoodForMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5069F2A31108800E609BA /* GoodForMeUITestsLaunchTests.swift */; };
+		55A506AF2A31135C00E609BA /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A506AE2A31135C00E609BA /* TestController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,17 +39,16 @@
 		55A506762A31108500E609BA /* GoodForMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodForMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A506792A31108500E609BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A5067B2A31108600E609BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		55A5067D2A31108600E609BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		55A506802A31108600E609BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55A506832A31108600E609BA /* GoodForMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoodForMe.xcdatamodel; sourceTree = "<group>"; };
 		55A506852A31108700E609BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		55A506882A31108700E609BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55A5068A2A31108700E609BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A5068F2A31108700E609BA /* GoodForMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodForMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A506932A31108800E609BA /* GoodForMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodForMeTests.swift; sourceTree = "<group>"; };
 		55A506992A31108800E609BA /* GoodForMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodForMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A5069D2A31108800E609BA /* GoodForMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodForMeUITests.swift; sourceTree = "<group>"; };
 		55A5069F2A31108800E609BA /* GoodForMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodForMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		55A506AC2A3111D700E609BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55A506AE2A31135C00E609BA /* TestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +101,7 @@
 			children = (
 				55A506792A31108500E609BA /* AppDelegate.swift */,
 				55A5067B2A31108600E609BA /* SceneDelegate.swift */,
-				55A5067D2A31108600E609BA /* ViewController.swift */,
-				55A5067F2A31108600E609BA /* Main.storyboard */,
+				55A506AD2A31135000E609BA /* Presentation */,
 				55A506852A31108700E609BA /* Assets.xcassets */,
 				55A506872A31108700E609BA /* LaunchScreen.storyboard */,
 				55A5068A2A31108700E609BA /* Info.plist */,
@@ -128,6 +125,14 @@
 				55A5069F2A31108800E609BA /* GoodForMeUITestsLaunchTests.swift */,
 			);
 			path = GoodForMeUITests;
+			sourceTree = "<group>";
+		};
+		55A506AD2A31135000E609BA /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				55A506AE2A31135C00E609BA /* TestController.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +220,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 55A5066D2A31108500E609BA;
 			productRefGroup = 55A506772A31108500E609BA /* Products */;
@@ -236,7 +240,6 @@
 			files = (
 				55A506892A31108700E609BA /* LaunchScreen.storyboard in Resources */,
 				55A506862A31108700E609BA /* Assets.xcassets in Resources */,
-				55A506812A31108600E609BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A506842A31108600E609BA /* GoodForMe.xcdatamodeld in Sources */,
-				55A5067E2A31108600E609BA /* ViewController.swift in Sources */,
 				55A5067A2A31108600E609BA /* AppDelegate.swift in Sources */,
 				55A5067C2A31108600E609BA /* SceneDelegate.swift in Sources */,
+				55A506AF2A31135C00E609BA /* TestController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,18 +304,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		55A5067F2A31108600E609BA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				55A506802A31108600E609BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		55A506872A31108700E609BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				55A506882A31108700E609BA /* Base */,
+				55A506AC2A3111D700E609BA /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -370,7 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -424,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -444,11 +439,13 @@
 				DEVELOPMENT_TEAM = 2Q72JE9WMB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodForMe/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GoodForMe;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,11 +469,13 @@
 				DEVELOPMENT_TEAM = 2Q72JE9WMB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodForMe/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GoodForMe;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
