@@ -37,6 +37,11 @@
 		55BE77BB2A3F2AB2002A1F91 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE77BA2A3F2AB2002A1F91 /* ActivityService.swift */; };
 		55BE77BD2A3F2B00002A1F91 /* ActivityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE77BC2A3F2B00002A1F91 /* ActivityListViewModel.swift */; };
 		55BE77BF2A3F2B1E002A1F91 /* ActivityListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE77BE2A3F2B1E002A1F91 /* ActivityListController.swift */; };
+		55BE77C22A3F3181002A1F91 /* DayPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE77C12A3F3181002A1F91 /* DayPickerView.swift */; };
+		55BE77C42A3F31CD002A1F91 /* TextFieldWithInsideShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE77C32A3F31CD002A1F91 /* TextFieldWithInsideShadow.swift */; };
+		55BE77C62A3F32BD002A1F91 /* TrackingDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE77C52A3F32BD002A1F91 /* TrackingDayCell.swift */; };
+		55BE77C92A3F3349002A1F91 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE77C82A3F3349002A1F91 /* DateFormatter.swift */; };
+		55BE77CB2A3F34AB002A1F91 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE77CA2A3F34AB002A1F91 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +93,11 @@
 		55BE77BA2A3F2AB2002A1F91 /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
 		55BE77BC2A3F2B00002A1F91 /* ActivityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListViewModel.swift; sourceTree = "<group>"; };
 		55BE77BE2A3F2B1E002A1F91 /* ActivityListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListController.swift; sourceTree = "<group>"; };
+		55BE77C12A3F3181002A1F91 /* DayPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPickerView.swift; sourceTree = "<group>"; };
+		55BE77C32A3F31CD002A1F91 /* TextFieldWithInsideShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithInsideShadow.swift; sourceTree = "<group>"; };
+		55BE77C52A3F32BD002A1F91 /* TrackingDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingDayCell.swift; sourceTree = "<group>"; };
+		55BE77C82A3F3349002A1F91 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		55BE77CA2A3F34AB002A1F91 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +246,7 @@
 		55BE77A42A3E0971002A1F91 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				55BE77C72A3F3340002A1F91 /* Foundation */,
 				55BE77A52A3E097C002A1F91 /* CoreData */,
 			);
 			path = Extensions;
@@ -255,6 +266,7 @@
 				55BE77B22A3E0C7B002A1F91 /* ActivityListCoordinator.swift */,
 				55BE77BC2A3F2B00002A1F91 /* ActivityListViewModel.swift */,
 				55BE77BE2A3F2B1E002A1F91 /* ActivityListController.swift */,
+				55BE77C02A3F3169002A1F91 /* Components */,
 			);
 			path = ActivityList;
 			sourceTree = "<group>";
@@ -273,6 +285,25 @@
 				55BE77BA2A3F2AB2002A1F91 /* ActivityService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		55BE77C02A3F3169002A1F91 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				55BE77C12A3F3181002A1F91 /* DayPickerView.swift */,
+				55BE77C52A3F32BD002A1F91 /* TrackingDayCell.swift */,
+				55BE77C32A3F31CD002A1F91 /* TextFieldWithInsideShadow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		55BE77C72A3F3340002A1F91 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				55BE77C82A3F3349002A1F91 /* DateFormatter.swift */,
+				55BE77CA2A3F34AB002A1F91 /* Date.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,10 +477,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A506842A31108600E609BA /* GoodForMe.xcdatamodeld in Sources */,
+				55BE77C62A3F32BD002A1F91 /* TrackingDayCell.swift in Sources */,
 				55A5067A2A31108600E609BA /* AppDelegate.swift in Sources */,
+				55BE77C42A3F31CD002A1F91 /* TextFieldWithInsideShadow.swift in Sources */,
 				55BE77A32A3E0915002A1F91 /* Assets.swift in Sources */,
 				55BE77A72A3E09AC002A1F91 /* SecureUnarchiveFromDataTransformer.swift in Sources */,
 				55BE77A22A3E0915002A1F91 /* Strings.swift in Sources */,
+				55BE77CB2A3F34AB002A1F91 /* Date.swift in Sources */,
+				55BE77C92A3F3349002A1F91 /* DateFormatter.swift in Sources */,
 				55BE77B32A3E0C7B002A1F91 /* ActivityListCoordinator.swift in Sources */,
 				55BE77B52A3E0CCC002A1F91 /* AppCoordinator.swift in Sources */,
 				55BE77BF2A3F2B1E002A1F91 /* ActivityListController.swift in Sources */,
@@ -458,6 +493,7 @@
 				55BE77BB2A3F2AB2002A1F91 /* ActivityService.swift in Sources */,
 				55A506AF2A31135C00E609BA /* TestController.swift in Sources */,
 				55BE77BD2A3F2B00002A1F91 /* ActivityListViewModel.swift in Sources */,
+				55BE77C22A3F3181002A1F91 /* DayPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

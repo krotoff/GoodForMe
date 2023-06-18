@@ -8,6 +8,7 @@
 import UIKit.UIViewController
 
 import CoordinatableViewController
+import ConstraintsKit
 
 final class ActivityListController: CoordinatableViewController {
 
@@ -16,6 +17,8 @@ final class ActivityListController: CoordinatableViewController {
     // MARK: - Private properties
 
     private let viewModel: ActivityListViewModel
+
+    private let dayPickerView = DayPickerView()
 
     // MARK: - Init
 
@@ -38,6 +41,35 @@ final class ActivityListController: CoordinatableViewController {
     // MARK: - Private methods
 
     private func setupUI() {
-        view.backgroundColor = .orange
+        view.addSubview(dayPickerView)
+
+        view.backgroundColor = .secondarySystemBackground
+
+        dayPickerView
+            .align(with: view, edges: [.left, .right, .top], isInSafeArea: true)
+            .equalsHeight(to: 152)
+
+        let ttt = 0...365
+        let today = Date()
+        dayPickerView.configure(with: DayPickerView.Model(
+            models: ttt.map { index in
+                let date = today.advanced(by: Double(index - 7) * 60 * 60 * 24)
+                return TrackingDayCell.Model(
+                    date: date,
+                    isToday: today.isSameDay(with: date),
+                    state: ((index % 4) == 0) ? .normal : .finished,
+                    previousDayState: (((index - 1) % 4) == 0) ? .normal : .finished,
+                    nextDayState: (((index + 1) % 4) == 0) ? .normal : .finished
+                )
+            },
+            selectedIndex: 0
+        ))
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedAnywhere))
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc private func tappedAnywhere() {
+        view.endEditing(true)
     }
 }
