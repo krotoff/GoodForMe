@@ -1,0 +1,12 @@
+strings:
+  inputs: GoodForMe/Resources/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Generated/Strings.swift
+xcassets:
+  inputs:
+    - GoodForMe/Resources/Images.xcassets
+    - GoodForMe/Resources/Colors.xcassets
+  outputs:
+    - templateName: swift5
+      output: Generated/Assets.swift
