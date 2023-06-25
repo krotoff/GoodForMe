@@ -10,6 +10,17 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  internal enum Main {
+    internal enum List {
+      internal enum Textfield {
+        /// Localizable.strings
+        ///   GoodForMe
+        /// 
+        ///   Created by Andrei Krotov on 17/06/2023.
+        internal static let placeholder = L10n.tr("Localizable", "main.list.textfield.placeholder", fallback: "Note how good you are!")
+      }
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

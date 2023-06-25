@@ -12,6 +12,21 @@ import AnimatableViewsKit
 
 final class TextFieldWithInsideShadow: UIView {
 
+    // MARK: - Internal types
+
+    struct Model: Equatable {
+
+        static func == (lhs: TextFieldWithInsideShadow.Model, rhs: TextFieldWithInsideShadow.Model) -> Bool {
+            lhs.text == rhs.text && lhs.placeholder == rhs.placeholder
+        }
+
+        var text: String?
+        var placeholder: String?
+        var buttonClosure: ((String?) -> Void)?
+
+        static let initial = Model()
+    }
+
     // MARK: - Private properties
 
     private let holedLayer: CAShapeLayer = {
@@ -28,7 +43,6 @@ final class TextFieldWithInsideShadow: UIView {
         let view = UITextField()
         view.textColor = .label
         view.tintColor = .label
-        view.placeholder = "Mark yourself as a Hero!"
         view.font = .systemFont(ofSize: 20, weight: .bold)
         view.borderStyle = .none
         view.backgroundColor = .clear
@@ -42,7 +56,7 @@ final class TextFieldWithInsideShadow: UIView {
     private let applyButton: UIButton = {
         let button = BouncableButton()
         button.backgroundColor = .systemGreen
-//        button.setImage(Asset.Images.check.image, for: .normal)
+        button.setImage(Asset.Images.check.image, for: .normal)
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = .init(width: 0, height: 2)
         button.layer.shadowRadius = 3
@@ -50,6 +64,8 @@ final class TextFieldWithInsideShadow: UIView {
 
         return button
     }()
+
+    private var model = Model.initial
 
     // MARK: - Init
 
@@ -72,7 +88,10 @@ final class TextFieldWithInsideShadow: UIView {
 
         holedLayer.frame = bounds
 
-        let insidePath = UIBezierPath(roundedRect: .init(x: 16, y: 16, width: bounds.width - 32, height: bounds.height - 32), cornerRadius: (bounds.height - 32) / 2)
+        let insidePath = UIBezierPath(
+            roundedRect: .init(x: 16, y: 16, width: bounds.width - 32, height: bounds.height - 32),
+            cornerRadius: (bounds.height - 32) / 2
+        )
         let wholePath = UIBezierPath(rect: bounds)
         wholePath.append(insidePath.reversing())
         holedLayer.path = wholePath.cgPath
@@ -81,6 +100,13 @@ final class TextFieldWithInsideShadow: UIView {
     }
 
     // MARK: - Internal methods
+
+    func configure(model: Model) {
+        self.model = model
+        textField.text = model.text
+        textField.placeholder = model.placeholder
+    }
+
     // MARK: - Private methods
 
     private func setupUI() {
@@ -98,6 +124,7 @@ final class TextFieldWithInsideShadow: UIView {
 
         applyButton.transform = .init(translationX: 100, y: 0)
 
+        applyButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
         textField.addTarget(self, action: #selector(textFieldValueWasChanged), for: .editingChanged)
     }
 
@@ -107,5 +134,10 @@ final class TextFieldWithInsideShadow: UIView {
             ? .init(translationX: self.applyButton.frame.width + 8, y: 0)
             : .identity
         }
+    }
+
+    @objc private func tapButton() {
+        endEditing(true)
+        model.buttonClosure?(textField.text)
     }
 }

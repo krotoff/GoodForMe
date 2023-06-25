@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554D6F6F2A482E1C005AAAEF /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554D6F6E2A482E1C005AAAEF /* UserActivity.swift */; };
 		55A5067A2A31108600E609BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A506792A31108500E609BA /* AppDelegate.swift */; };
 		55A5067C2A31108600E609BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5067B2A31108600E609BA /* SceneDelegate.swift */; };
 		55A506842A31108600E609BA /* GoodForMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55A506822A31108600E609BA /* GoodForMe.xcdatamodeld */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		554D6F6E2A482E1C005AAAEF /* UserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivity.swift; sourceTree = "<group>"; };
 		55A506762A31108500E609BA /* GoodForMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodForMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A506792A31108500E609BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A5067B2A31108600E609BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		554D6F6D2A482E0F005AAAEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				554D6F6E2A482E1C005AAAEF /* UserActivity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		55A5066D2A31108500E609BA = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +173,7 @@
 				55BE77B92A3F2A9F002A1F91 /* Services */,
 				55A506AD2A31135000E609BA /* Presentation */,
 				55BE77B62A3F11DA002A1F91 /* Data */,
+				554D6F6D2A482E0F005AAAEF /* Models */,
 				55BE77A42A3E0971002A1F91 /* Extensions */,
 				55BE77952A3E084F002A1F91 /* Resources */,
 				55BE77B42A3E0CCC002A1F91 /* AppCoordinator.swift */,
@@ -479,6 +490,7 @@
 				55A506842A31108600E609BA /* GoodForMe.xcdatamodeld in Sources */,
 				55BE77C62A3F32BD002A1F91 /* TrackingDayCell.swift in Sources */,
 				55A5067A2A31108600E609BA /* AppDelegate.swift in Sources */,
+				554D6F6F2A482E1C005AAAEF /* UserActivity.swift in Sources */,
 				55BE77C42A3F31CD002A1F91 /* TextFieldWithInsideShadow.swift in Sources */,
 				55BE77A32A3E0915002A1F91 /* Assets.swift in Sources */,
 				55BE77A72A3E09AC002A1F91 /* SecureUnarchiveFromDataTransformer.swift in Sources */,

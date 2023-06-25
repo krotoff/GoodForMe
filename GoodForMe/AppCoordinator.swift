@@ -33,7 +33,7 @@ final class AppCoordinator: BaseCoordinator {
     func startApp() {
         let coordinator = ActivityListCoordinator(
             parentCoordinator: self,
-            activityService: ActivityService()
+            activityService: ActivityService(dataGateway: coreDataGateway)
         )
 
         setControllerAsRoot(coordinator.controller)

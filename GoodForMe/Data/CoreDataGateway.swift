@@ -30,6 +30,7 @@ public protocol CoreDataManagable {
 }
 
 public protocol CoreDataGatewayType {
+    func createManagedObject<ObjectType: NSManagedObject>() -> ObjectType
     func fetchData<ObjectType: CoreDataManagable>() -> [ObjectType]
     func saveObject<ObjectType: CoreDataManagable>(_ object: ObjectType)
     func deleteObject<ObjectType: CoreDataManagable>(_ object: ObjectType)
@@ -69,6 +70,10 @@ final class CoreDataGateway: NSObject, CoreDataGatewayType {
     }
 
     // MARK: - Internal methods
+
+    func createManagedObject<ObjectType: NSManagedObject>() -> ObjectType {
+        ObjectType(context: persistentContainer.viewContext)
+    }
 
     func fetchData<ObjectType: CoreDataManagable>() -> [ObjectType] {
         let request = NSFetchRequest<ObjectType.ManagedObjectType>(entityName: ObjectType.ManagedObjectType.entityName)

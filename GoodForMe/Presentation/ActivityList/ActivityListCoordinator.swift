@@ -23,7 +23,7 @@ final class ActivityListCoordinator: Coordinator {
     }
 
     override func makeController() -> CoordinatableViewController {
-        let viewModel = ActivityListViewModel() 
+        let viewModel = ActivityListViewModel(activityService: activityService) 
         return ActivityListController(viewModel: viewModel)
     }
 

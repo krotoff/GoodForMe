@@ -49,23 +49,10 @@ final class ActivityListController: CoordinatableViewController {
             .align(with: view, edges: [.left, .right, .top], isInSafeArea: true)
             .equalsHeight(to: 152)
 
-        let ttt = 0...365
-        let today = Date()
-        dayPickerView.configure(with: DayPickerView.Model(
-            models: ttt.map { index in
-                let date = today.advanced(by: Double(index - 7) * 60 * 60 * 24)
-                return TrackingDayCell.Model(
-                    date: date,
-                    isToday: today.isSameDay(with: date),
-                    state: ((index % 4) == 0) ? .normal : .finished,
-                    previousDayState: (((index - 1) % 4) == 0) ? .normal : .finished,
-                    nextDayState: (((index + 1) % 4) == 0) ? .normal : .finished
-                )
-            },
-            selectedIndex: 0
-        ))
+        dayPickerView.configure(with: viewModel.model)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedAnywhere))
+        tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
     }
 

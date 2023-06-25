@@ -15,7 +15,10 @@ final class DayPickerView: UIView {
 
     struct Model: Equatable {
         let models: [TrackingDayCell.Model]
+        let textFieldModel: TextFieldWithInsideShadow.Model
         var selectedIndex: Int
+
+        static let initial = Model(models: [], textFieldModel: .initial, selectedIndex: 0)
     }
 
     private struct Constants {
@@ -30,7 +33,7 @@ final class DayPickerView: UIView {
     private let textField = TextFieldWithInsideShadow(backgroundColor: .secondarySystemBackground)
 
     private let selectorLayer = CAShapeLayer()
-    private var model = Model(models: [], selectedIndex: 0)
+    private var model = Model.initial
     private var wasSet = false
 
     // MARK: - Init
@@ -57,6 +60,7 @@ final class DayPickerView: UIView {
         guard self.model != model else { return }
 
         self.model = model
+        textField.configure(model: model.textFieldModel)
         collectionView.reloadData()
         placeSelector()
     }
@@ -109,8 +113,6 @@ final class DayPickerView: UIView {
     }
 
     private func drawSelectorIfNeeded() {
-        print(wasSet, collectionView.contentSize, collectionView.bounds, model.selectedIndex)
-
         guard
             !wasSet,
             collectionView.contentSize.width * collectionView.contentSize.height > 0,
