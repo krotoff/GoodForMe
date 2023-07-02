@@ -36,6 +36,8 @@ final class DayPickerView: UIView {
     private var model = Model.initial
     private var wasSet = false
 
+    private var lastCellToScroll: Int?
+
     // MARK: - Init
 
     override init(frame: CGRect) {
@@ -62,7 +64,7 @@ final class DayPickerView: UIView {
         self.model = model
         textField.configure(model: model.textFieldModel)
         collectionView.reloadData()
-        placeSelector()
+        wasSet = false
     }
 
     // MARK: - Private methods
@@ -97,9 +99,15 @@ final class DayPickerView: UIView {
     }
 
     private func placeSelector() {
+        guard lastCellToScroll != model.selectedIndex + 1 else { return }
+
+        collectionView.scrollToItem(
+            at: IndexPath(item: model.selectedIndex + 1, section: 0), at: .right, animated: lastCellToScroll != nil
+        )
+
         guard let cell = collectionView.cellForItem(at: IndexPath(item: model.selectedIndex, section: 0)) else { return }
 
-        collectionView.scrollToItem(at: IndexPath(item: model.selectedIndex + 1, section: 0), at: .right, animated: true)
+        lastCellToScroll = model.selectedIndex + 1
         if selectorLayer.opacity == 0 {
             selectorLayer.frame.origin = .init(x: cell.frame.midX - selectorLayer.frame.width / 2, y: selectorLayer.frame.origin.y)
             UIView.animate(withDuration: 0.3) {
@@ -113,10 +121,13 @@ final class DayPickerView: UIView {
     }
 
     private func drawSelectorIfNeeded() {
+        guard collectionView.contentSize.width * collectionView.contentSize.height > 0 else { return }
+
+        defer { placeSelector() }
+
         guard
             !wasSet,
-            collectionView.contentSize.width * collectionView.contentSize.height > 0,
-            collectionView.cellForItem(at: IndexPath(item: model.selectedIndex, section: 0)) != nil
+            collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) != nil
         else { return }
 
         wasSet = true
@@ -162,8 +173,6 @@ final class DayPickerView: UIView {
         selectorLayer.shadowRadius = 5
         selectorLayer.shadowOffset = .init(width: 0, height: 3)
         selectorLayer.shadowOpacity = 0.5
-
-        placeSelector()
     }
 }
 
@@ -185,8 +194,8 @@ extension DayPickerView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let cell = cell as? TrackingDayCell else { return }
 
-        drawSelectorIfNeeded()
         cell.configure(with: model.models[indexPath.item])
+        drawSelectorIfNeeded()
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
