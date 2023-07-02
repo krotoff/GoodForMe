@@ -53,6 +53,7 @@ final class DayPickerView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
+        lastCellToScroll = nil
         drawSelectorIfNeeded()
     }
 
@@ -88,7 +89,7 @@ final class DayPickerView: UIView {
         collectionViewLayout.minimumInteritemSpacing = 0
 
         collectionView
-            .align(with: self, edges: [.left, .right, .top], insets: .init(top: 0, left: 0, bottom: 0, right: 0))
+            .align(with: self, edges: [.left, .right, .top])
         textField
             .align(with: self, edges: [.left, .right, .bottom])
             .spacingToBottom(of: collectionView, constant: 8)
@@ -108,14 +109,15 @@ final class DayPickerView: UIView {
         guard let cell = collectionView.cellForItem(at: IndexPath(item: model.selectedIndex, section: 0)) else { return }
 
         lastCellToScroll = model.selectedIndex + 1
+        let x = cell.frame.midX - selectorLayer.frame.width / 2
         if selectorLayer.opacity == 0 {
-            selectorLayer.frame.origin = .init(x: cell.frame.midX - selectorLayer.frame.width / 2, y: selectorLayer.frame.origin.y)
+            selectorLayer.frame.origin = .init(x: x, y: selectorLayer.frame.origin.y)
             UIView.animate(withDuration: 0.3) {
                 self.selectorLayer.opacity = 1
             }
         } else {
             UIView.animate(withDuration: 0.3) {
-                self.selectorLayer.frame.origin = .init(x: cell.frame.midX - self.selectorLayer.frame.width / 2, y: self.selectorLayer.frame.origin.y)
+                self.selectorLayer.frame.origin = .init(x: x, y: self.selectorLayer.frame.origin.y)
             }
         }
     }
